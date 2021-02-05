@@ -4,25 +4,23 @@ import java.io.File;
 
 public class Credential{
     private String userName;
-    //private Password password;
-    private String password;
-    //private Resource resource;
-    private String resource;
+    private Password password;
+    private Resource resource;
     private String description;
     private File icon; 
 
-    public Credential(String userName, String password){
+    public Credential(String userName, Password password){
         this.userName = userName;
         this.password = password;
     }
 
-    public Credential(String userName, String password, String resource, String description){
+    public Credential(String userName, Password password, Resource resource, String description){
         this.userName = userName;
         this.password = password;
         this.resource = resource;
         this.description = description;
     }
-    public Credential(String userName, String password, String resource, String description, File icon){
+    public Credential(String userName, Password password, Resource resource, String description, File icon){
         this.userName = userName;
         this.password = password;
         this.resource = resource;
@@ -33,13 +31,13 @@ public class Credential{
     public String getUserName() {
         return userName;
     }
-    public String getPassword() {
+    public Password getPassword() {
         return password;
     }
-    public String getResource() {
+    public Resource getResource() {
         return resource;
     }
-    public void setResource(String resource) {
+    public void setResource(Resource resource) {
         this.resource = resource;
     }
     public String getDescription() {
