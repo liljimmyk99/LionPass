@@ -1,3 +1,5 @@
+package models;
+
 import java.util.*;
 
 public class User{
@@ -10,6 +12,7 @@ public class User{
     private String stateLocation;
     private String zipCode;
 
+    private Credential logInInfo;
     private ArrayList<Credential> storedCrednetials;
 
     public User(String firstName, String lastName, int age, String cityLocation, String stateLocation, String zipcode, ArrayList<Credential> storeCredentials){
