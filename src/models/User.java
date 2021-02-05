@@ -70,5 +70,13 @@ public class User{
     public void addStoredCredential(Credential newCreds){
         storedCrednetials.add(newCreds);
     }
+    public boolean checkLogin(String userName, String password){
+
+        if(logInInfo.getUserName().equals(userName) && logInInfo.getPassword().equals(userName)){
+            return true;
+        }
+        //If not this doesn't work
+        return false;
+    }
 
 }
