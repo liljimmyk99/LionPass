@@ -16,7 +16,7 @@ public class User{
     private ArrayList<Credential> storedCrednetials;
 
     public User(String firstName, String lastName, int age, String cityLocation, String stateLocation, String zipcode, ArrayList<Credential> storeCredentials){
-        storedCrednetials = new ArrayList<Credential>();
+        this.storedCrednetials = storeCredentials;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
