@@ -38,6 +38,10 @@ public class Password{
         //algorithm to decrypt passwordValue
         return "";
     }
+    @Override
+    public String toString(){
+        return "Value:" + getValue() + ", User Generated:" + this.userCreated + ", Number Chars:" + this.numberCharacters + ", Easy to Read:" + this.numberCharacters;
+    }
 
 
 

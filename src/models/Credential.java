@@ -52,6 +52,10 @@ public class Credential{
     public void setIcon(File icon) {
         this.icon = icon;
     }
+    @Override
+    public String toString(){
+        return "UserName:" + getUserName() + ", Description:" + getDescription() + "\n Resource: {" + getResource().toString() + "} \n Password: {" + getPassword().toString() + "}";
+    }
 
 
 

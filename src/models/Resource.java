@@ -39,8 +39,12 @@ public class Resource{
     public void setWebApp(boolean webApp) {
         this.webApp = webApp;
     }
-    public boolean getWebAppp(){
+    public boolean getWebApp(){
         return webApp;
+    }
+    @Override
+    public String toString(){
+        return "Name:" + getName() + ", URL:" + getUrl() + ", Creation Date:" + getCreation() + "WebApp:" + getWebApp();
     }
     
 }

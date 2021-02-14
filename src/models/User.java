@@ -11,7 +11,6 @@ public class User{
     private String cityLocation;
     private String stateLocation;
     private String zipCode;
-
     private Credential logInInfo;
     private ArrayList<Credential> storedCrednetials;
 
@@ -30,12 +29,14 @@ public class User{
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public String getLastName() {
         return lastName;
     }
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+    public String getFullName(){
+        return getFirstName() + " " + getLastName();
     }
     public int getAge() {
         return age;
@@ -67,7 +68,7 @@ public class User{
     public void setStoredCrednetials(ArrayList<Credential> storedCrednetials) {
         this.storedCrednetials = storedCrednetials;
     }
-    public void addStoredCredential(Credential newCreds){
+    public void addCredential(Credential newCreds){
         storedCrednetials.add(newCreds);
     }
     public boolean checkLogin(String userName, String password){
@@ -77,6 +78,11 @@ public class User{
         }
         //If not this doesn't work
         return false;
+    }
+    @Override
+    public String toString(){
+        return "Name:" + getFullName() + ", Age:" + getAge() + ", City:" + getCityLocation() + 
+        ", State:" + getStateLocation() + ", Zip:" +getZipCode();
     }
 
 }
