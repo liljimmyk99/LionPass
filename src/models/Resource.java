@@ -44,7 +44,7 @@ public class Resource{
     }
     @Override
     public String toString(){
-        return "Name:" + getName() + ", URL:" + getUrl() + ", Creation Date:" + getCreation() + "WebApp:" + getWebApp();
+        return "Name:" + getName() + ", URL:" + getUrl() + ", Creation Date:" + getCreation() + " WebApp:" + getWebApp();
     }
     
 }

@@ -11,12 +11,8 @@ public class Words{
     private String[] peopleNames = {"jimmy", "matthew", "noah", "gavin", "dylan", "daniel", "emily", "kady", "kelli", "natalie", "sarah", "elissa", "liz", "justin", "jordan"};
     
 
-    public Words(String[] things, String[] verbs, String[] places, String[] animals, String[] peopleNames){
-        this.things = things;
-        this.verbs = verbs;
-        this.places = places;
-        this.animals = animals;
-        this.peopleNames = peopleNames;
+    public Words(){
+        //I Do Nothing
     }
 
     public String getRandomThing(){
@@ -29,42 +25,42 @@ public class Words{
     public String getRandomVerb(){
         int numVerbs = verbs.length;
 
-        int randIndex = (int) (Math.random() * numVerbs) - 1;
+        int randIndex = (int) (Math.random() * numVerbs);
         return verbs[randIndex];
     }
     public String getRandomPlace(){
         int numPlaces = places.length;
 
-        int randIndex = (int) (Math.random() * numPlaces) - 1;
+        int randIndex = (int) (Math.random() * numPlaces);
         return places[randIndex];
     }
     public String getRandomAnimal(){
         int numAnimals = animals.length;
 
-        int randIndex = (int) (Math.random() * numAnimals) - 1;
+        int randIndex = (int) (Math.random() * numAnimals);
         return animals[randIndex];
     }
     public String getRandomPersonName(){
         int numNames = peopleNames.length;
 
-        int randIndex = (int) (Math.random() * numNames) - 1;
+        int randIndex = (int) (Math.random() * numNames);
         return peopleNames[randIndex];
     }
     public String getRandomLetter(){
         int numLetters = ALPHABET.length;
 
-        int randIndex = (int) (Math.random() * numLetters) - 1;
+        int randIndex = (int) (Math.random() * numLetters);
         return ALPHABET[randIndex];
     }
     public String getRandomNumber(){
-        int randIndex = (int) (Math.random() * 10) - 1;
+        int randIndex = (int) (Math.random() * 10);
 
         return NUMBERS[randIndex];
     }
     public String getRandomUsState(){
         int numStates = STATES.length;
 
-        int randIndex = (int) (Math.random() * numStates) - 1;
+        int randIndex = (int) (Math.random() * numStates);
 
         return STATES[randIndex];
     }
