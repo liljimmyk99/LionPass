@@ -1,6 +1,10 @@
 package models;
 
+import static org.junit.Assert.assertEquals;
+
 import java.time.LocalDateTime;
+
+import org.junit.Test;
 
 
 public class Resource{

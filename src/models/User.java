@@ -14,14 +14,15 @@ public class User{
     private Credential logInInfo;
     private ArrayList<Credential> storedCrednetials;
 
-    public User(String firstName, String lastName, int age, String cityLocation, String stateLocation, String zipcode, ArrayList<Credential> storeCredentials){
-        this.storedCrednetials = storeCredentials;
+    public User(String firstName, String lastName, int age, String cityLocation, String stateLocation, String zipcode, ArrayList<Credential> storeCredentials, Credential logInInfo){
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.cityLocation = cityLocation;
         this.stateLocation = stateLocation;
         this.zipCode = zipcode;
+        this.storedCrednetials = storeCredentials;
+        this.logInInfo = logInInfo;
     }
     public String getFirstName() {
         return firstName;
@@ -72,8 +73,12 @@ public class User{
         storedCrednetials.add(newCreds);
     }
     public boolean checkLogin(String userName, String password){
-
-        if(logInInfo.getUserName().equals(userName) && logInInfo.getPassword().equals(userName)){
+        System.out.println("checkLogin activated");
+        System.out.println("Username Parameter: '" + userName + "' Password Parameter: '" + password +"'");
+        String correctUserName = logInInfo.getUserName();
+        String correctPassWord = logInInfo.getPassword().getValue();
+        System.out.println("Correct Username: '" + correctUserName + "' Correct Password: '" + correctPassWord +"'");
+        if((correctUserName).equals(userName) && (correctPassWord).equals(password)){
             return true;
         }
         //If not this doesn't work
@@ -85,4 +90,5 @@ public class User{
         ", State:" + getStateLocation() + ", Zip:" +getZipCode();
     }
 
+    
 }
