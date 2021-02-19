@@ -11,6 +11,7 @@ public class User{
     private String cityLocation;
     private String stateLocation;
     private String zipCode;
+    private int somun;
     private Credential logInInfo;
     private ArrayList<Credential> storedCrednetials;
 
@@ -89,6 +90,12 @@ public class User{
         return "Name:" + getFullName() + ", Age:" + getAge() + ", City:" + getCityLocation() + 
         ", State:" + getStateLocation() + ", Zip:" +getZipCode();
     }
+	public Credential getLogInInfo() {
+		return logInInfo;
+	}
+	public void setLogInInfo(Credential logInInfo) {
+		this.logInInfo = logInInfo;
+	}
 
     
 }
