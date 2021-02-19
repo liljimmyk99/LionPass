@@ -6,21 +6,22 @@ public class User{
     //Represents an actual user
     private String firstName;
     private String lastName;
+    private String accountType;
     //Used for Password Generation vvvvvv
     private int age;
-    private String cityLocation;
-    private String stateLocation;
-    private String zipCode;
+    private Address address;
     private Credential logInInfo;
     private ArrayList<Credential> storedCrednetials;
 
-    public User(String firstName, String lastName, int age, String cityLocation, String stateLocation, String zipcode, ArrayList<Credential> storeCredentials, Credential logInInfo){
+    public User(){
+        
+    }
+
+    public User(String firstName, String lastName, int age, Address address, ArrayList<Credential> storeCredentials, Credential logInInfo){
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.cityLocation = cityLocation;
-        this.stateLocation = stateLocation;
-        this.zipCode = zipcode;
+        this.address = address;
         this.storedCrednetials = storeCredentials;
         this.logInInfo = logInInfo;
     }
@@ -45,24 +46,15 @@ public class User{
     public void setAge(int age) {
         this.age = age;
     }
-    public String getCityLocation() {
-        return cityLocation;
+
+    public Address getAddress() {
+        return address;
     }
-    public void setCityLocation(String cityLocation) {
-        this.cityLocation = cityLocation;
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
-    public String getStateLocation() {
-        return stateLocation;
-    }
-    public void setStateLocation(String stateLocation) {
-        this.stateLocation = stateLocation;
-    }
-    public String getZipCode() {
-        return zipCode;
-    }
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
-    }
+    
     public ArrayList<Credential> getStoredCrednetials() {
         return storedCrednetials;
     }
@@ -84,11 +76,21 @@ public class User{
         //If not this doesn't work
         return false;
     }
+
     @Override
-    public String toString(){
-        return "Name:" + getFullName() + ", Age:" + getAge() + ", City:" + getCityLocation() + 
-        ", State:" + getStateLocation() + ", Zip:" +getZipCode();
+    public String toString() {
+        return "User [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age +", accountType=" + accountType + ", address=" + address + "]";
     }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+
 
     
 }
