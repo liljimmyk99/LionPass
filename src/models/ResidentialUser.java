@@ -74,5 +74,16 @@ public class ResidentialUser extends User{
                 + ", licensesAvailable=" + licensesAvailable + ", phoneNumber=" + phoneNumber
                 + ", premiumMembershipActive=" + premiumMembershipActive + "]";
     }
+
+    @Override
+    public void billUser(){
+        System.out.println("billUser function activated");
+
+        Address billingAddress = super.getAddress();
+
+        //Sends Bill to billingAddress
+
+        System.out.println("Sending Bill to Residential User's address: " + billingAddress.toString());
+    }
     
 }

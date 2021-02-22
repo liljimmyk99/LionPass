@@ -67,14 +67,14 @@ public class Address {
 
     @Override
     public String toString() {
-        if (apartment.equals(null)){
-            return "Address [street=" + street +", city=" + city + ", state=" + state
-             +", zipcode=" + zipcode + ", country=" + country + "]";
-        }
-        else{
+        // if (apartment.equals(null)){
+        //     return "Address [street=" + street +", city=" + city + ", state=" + state
+        //      +", zipcode=" + zipcode + ", country=" + country + "]";
+        // }
+        // else{
             return "Address [street=" + street + "apartment=" + apartment + ", city=" + city + ", state=" + state
             +", zipcode=" + zipcode + ", country=" + country + "]";
-        }
+        // }
     }
 
     public Address(String street, String city, String state, String zipcode, String country) {

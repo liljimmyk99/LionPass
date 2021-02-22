@@ -2,6 +2,7 @@ package models;
 
 import static java.lang.System.out;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import org.junit.Test;
 
@@ -12,8 +13,23 @@ import jdk.jfr.Timestamp;
 public class TestHarness {
 
     public TestHarness(){
-        testWords();
-        testResource();
+        testClassHierarchy();
+    }
+
+    public void testClassHierarchy(){
+        System.out.println("testClassHierarchy function activated");
+        ArrayList<User> superUser = new ArrayList<>();
+        User enterpriseUser = new EnterpriseUser("Joe", "Shoe", 46, new Address("1234 Boring Ave", "Blueville", "AK", "12345", "USA"), null, new Credential("boring", new Password("person")), "987654321", "The Boring Company", "4796665762", new Address("5678 Who Do we", "Appricate", "FL", "56901", "USA"));
+        User residentUser = new ResidentialUser("Jill", "Mill", 29, new Address("1234 Ideclare", "Thumbwar", "NJ", "78901", "USA"), null, new Credential("fun", new Password("league")), LocalDateTime.now(), 2, false, "9111199191", "123454321");
+        superUser.add(enterpriseUser);
+        superUser.add(residentUser);
+
+        for(User user: superUser){
+            user.billUser();
+            System.out.println(user.toString());
+            System.out.println("----------------------------------");
+        }
+        System.out.println("Conclusion of Test ClassHierarchy");
     }
 
     public void testWords(){

@@ -90,6 +90,12 @@ public class User{
         this.accountType = accountType;
     }
 
+    public void billUser(){
+        System.out.println("billUser Function activated");
+
+        System.out.println("Error, Unable to decide user type");
+    }
+
 
 
     

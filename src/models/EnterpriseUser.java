@@ -59,9 +59,20 @@ public class EnterpriseUser extends User{
 
     @Override
     public String toString() {
-        return  super.toString() + " EnterpriseUser [companyBillingAddress=" + companyBillingAddress + ", companyName=" + companyName
+        return  super.toString() + " EnterpriseUser [companyBillingAddress=" + companyBillingAddress.toString() + ", companyName=" + companyName
                 + ", companyPhoneNumber=" + companyPhoneNumber +  ", licenseNumber="
                 + licenseNumber + "]";
+    }
+
+    @Override
+    public void billUser(){
+        System.out.println("billUser function activated");
+
+        Address billingAddress = getCompanyBillingAddress();
+
+        //Sends Bill to billingAddress
+
+        System.out.println("Sending Bill to Enterpise User's Company: " + billingAddress.toString());
     }
     
 }
