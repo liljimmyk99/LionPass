@@ -1,70 +1,85 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.junit.Test;
 
-public class Words{
-    private final String[] ALPHABET = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k","l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-    private final String[] NUMBERS = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-    private final String[] STATES = {"Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Deleware", "Florida", " Georgia", "Hawaii", " Idaho", "Illnois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"};
-    private String[] things = {"cancer", "car", "music", "race", "television", "computer", "phone", "pineapple", "basketball", "soccer"};
-    private String[] verbs = {"racing", "watching", "running", "walking", "breathing", "driving", "reading", "using", "cleaning", "sitting", "sleeping", "cooking", "sleeping"};
-    private String[] places = {"school", "work", "stadium", "home", "restaraunt", "arena", "gas station", "outside", "park", "beach"};
-    private String[] animals = {"dog", "cat", "elephant", "bat", "cheeta", "squirl", "seagull", "bird", "bear", "owl", "deer"};
-    private String[] peopleNames = {"jimmy", "matthew", "noah", "gavin", "dylan", "daniel", "emily", "kady", "kelli", "natalie", "sarah", "elissa", "liz", "justin", "jordan"};
+public class Words implements RandomGenerator{
     
+    private static ArrayList<String> things = new ArrayList<>(Arrays.asList("cancer", "car", "music", "race", "television", "computer", "phone", "pineapple", "basketball", "soccer"));
+    private static ArrayList<String> verbs = new ArrayList<>(Arrays.asList("racing", "watching", "running", "walking", "breathing", "driving", "reading", "using", "cleaning", "sitting", "sleeping", "cooking", "sleeping"));
+    private static ArrayList<String> places = new ArrayList<>(Arrays.asList("school", "work", "stadium", "home", "restaraunt", "arena", "gas station", "outside", "park", "beach"));
+    private static ArrayList<String> animals = new ArrayList<>(Arrays.asList("dog", "cat", "elephant", "bat", "cheeta", "squirl", "seagull", "bird", "bear", "owl", "deer"));
+    private static ArrayList<String> peopleNames = new ArrayList<>(Arrays.asList("jimmy", "matthew", "noah", "gavin", "dylan", "daniel", "emily", "kady", "kelli", "natalie", "sarah", "elissa", "liz", "justin", "jordan"));
+    private static ArrayList<ArrayList<String>> categories = new ArrayList<>(Arrays.asList(things, verbs, places, animals, peopleNames));
 
     public Words(){
         //I Do Nothing
     }
+    /*
+    *
+    *  Needed to implement RandomGenerator Interface
+    *
+    */
+
+    
+    public String random(){
+        System.out.println("random function activated");
+        int randList = randomIndex(categories.size());
+        ArrayList<String> rand = categories.get(randList);
+        int length = randomIndex(rand.size());
+        return rand.get(length);
+    }
+
+    @Override
+    public void update(ArrayList<String> list){
+        System.out.println("Words update function activated");
+        //Mutliple Lists????????????
+        System.out.println("Implementation is in progress");
+    } 
+
+    @Override
+    public void addToGenerator(String toAdd){
+        System.out.println("Words update function activated");
+        //Multiple Paramters?  How differentiate List
+    }
+
+    public int randomIndex(int length){
+        return (int) (Math.random() * length); 
+    }
+
 
     public String getRandomThing(){
-        int numThing = things.length;
+        int length = things.size();
 
-        int randIndex = (int) (Math.random() * numThing) - 1;
-        return things[randIndex];
+        int randIndex = randomIndex(length);
+        return things.get(randIndex);
     }
 
     public String getRandomVerb(){
-        int numVerbs = verbs.length;
+        int length = verbs.size();
 
-        int randIndex = (int) (Math.random() * numVerbs);
-        return verbs[randIndex];
+        int randIndex = randomIndex(length);
+        return verbs.get(randIndex);
     }
     public String getRandomPlace(){
-        int numPlaces = places.length;
+        int length = places.size();
 
-        int randIndex = (int) (Math.random() * numPlaces);
-        return places[randIndex];
+        int randIndex = randomIndex(length);
+        return places.get(randIndex);
     }
     public String getRandomAnimal(){
-        int numAnimals = animals.length;
+        int length = animals.size();
 
-        int randIndex = (int) (Math.random() * numAnimals);
-        return animals[randIndex];
+        int randIndex = randomIndex(length);
+        return animals.get(randIndex);
     }
     public String getRandomPersonName(){
-        int numNames = peopleNames.length;
+        int length = peopleNames.size();
 
-        int randIndex = (int) (Math.random() * numNames);
-        return peopleNames[randIndex];
-    }
-    public String getRandomLetter(){
-        int numLetters = ALPHABET.length;
-
-        int randIndex = (int) (Math.random() * numLetters);
-        return ALPHABET[randIndex];
-    }
-    public String getRandomNumber(){
-        int randIndex = (int) (Math.random() * 10);
-
-        return NUMBERS[randIndex];
-    }
-    public String getRandomUsState(){
-        int numStates = STATES.length;
-
-        int randIndex = (int) (Math.random() * numStates);
-
-        return STATES[randIndex];
+        int randIndex = randomIndex(length);
+        return peopleNames.get(randIndex);
     }
 
 }

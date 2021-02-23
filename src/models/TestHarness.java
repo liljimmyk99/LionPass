@@ -1,8 +1,11 @@
 package models;
 
 import static java.lang.System.out;
+
+import java.lang.reflect.Array;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.junit.Test;
 
@@ -13,7 +16,25 @@ import jdk.jfr.Timestamp;
 public class TestHarness {
 
     public TestHarness(){
-        testClassHierarchy();
+        testInterface();
+    }
+
+    public void testInterface(){
+        System.out.println("testInterface function activated");
+        Letters letGen = new Letters();
+        Numbers numGen = new Numbers();
+        States stateGen = new States();
+        Words wordGen = new Words();
+        ArrayList<RandomGenerator> randGent = new ArrayList<>(Arrays.asList(letGen, numGen, stateGen, wordGen));
+        ArrayList<String> update = new ArrayList<>(Arrays.asList("I update", "I updated", "I Work?"));
+        for(RandomGenerator generator: randGent){
+            System.out.println(generator.random());
+            generator.addToGenerator("plz");
+            generator.update(update);
+            System.out.println(generator.random());
+            System.out.println("--------------------------------");
+        }
+
     }
 
     public void testClassHierarchy(){
@@ -57,9 +78,6 @@ public class TestHarness {
         out.println("Testing Resource Object");
 
         Words dictionary = new Words();
-        out.println("Random Letter: " + dictionary.getRandomLetter());
-        out.println("Random Number: " + dictionary.getRandomNumber());
-        out.println("Random US State: " + dictionary.getRandomUsState());
         out.println("Random Thing: " + dictionary.getRandomThing());
         out.println("Random Verb: " + dictionary.getRandomVerb());
         out.println("Random Place: " + dictionary.getRandomPlace());
@@ -67,9 +85,6 @@ public class TestHarness {
         out.println("Random Name: " + dictionary.getRandomPersonName());
 
         out.println("-----------------------------------------");
-        out.println("Another Random Letter: " + dictionary.getRandomLetter());
-        out.println("Another Random Number: " + dictionary.getRandomNumber());
-        out.println("Another Random US State: " + dictionary.getRandomUsState());
         out.println("Another Random Thing: " + dictionary.getRandomThing());
         out.println("Another Random Verb: " + dictionary.getRandomVerb());
         out.println("Another Random Place: " + dictionary.getRandomPlace());
